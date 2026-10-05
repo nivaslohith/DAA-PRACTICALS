@@ -1,0 +1,27 @@
+# Iterative Method
+def factorial_iterative(n):
+    result = 1
+
+    while n > 0:
+        result = result * n
+        n -= 1
+
+    return result
+
+
+# Recursive Method
+def factorial_recursive(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial_recursive(n - 1)
+
+
+# Main Program
+n = int(input("Enter a number: "))
+
+result1 = factorial_iterative(n)
+result2 = factorial_recursive(n)
+
+print("Factorial using Iterative Method:", result1)
+print("Factorial using Recursive Method:", result2)
