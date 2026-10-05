@@ -1,0 +1,22 @@
+#........... Bubble Sort.........#
+
+n = int(input("Enter the number of elements: "))
+
+arr = []
+
+print("Enter the elements:")
+for i in range(n):
+    element = int(input())
+    arr.append(element)
+for i in range(n - 1):
+    for j in range(n - 1 - i):
+        if arr[j] > arr[j + 1]:
+            # Swap the elements
+            arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+print("\nSorted Array:")
+for i in arr:
+    print(i, end=" ")
+
+print("\n\nTime Complexity : O(n²)")
+print("Space Complexity: O(1)")
