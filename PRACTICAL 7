@@ -1,0 +1,26 @@
+import time
+coins = [2,3,9]
+amount = int(input("Enter a number:"))
+
+start_time = time.perf_counter()
+
+dp = [amount + 1]*(amount + 1)
+dp[0]= 0
+
+for i in range(1, amount + 1):
+    for coin in coins:
+        if coin <= i:
+            dp[i] = min(dp[i], dp[i - coin] + 1)
+
+if dp[amount] > amount:
+    print("Amount cannot be formed")
+else:
+    print("Minimum number of coins:", dp[amount])
+
+end_time = time.perf_counter()
+
+execution_time = end_time - start_time
+
+print("Execution time:", execution_time, "seconds")
+print("Time Complexity: O(amount × number of coins)")
+print("Space Complexity: O(amount)")
