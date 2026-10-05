@@ -1,0 +1,48 @@
+import time
+
+n = int(input("Enter number of items: "))
+
+weights = []
+profits = []
+
+print("Enter weights of items:")
+for i in range(n):
+    weights.append(int(input(f"Weight of item {i + 1}: ")))
+
+print("Enter profits of items:")
+for i in range(n):
+    profits.append(int(input(f"Profit of item {i + 1}: ")))
+
+capacity = int(input("Enter knapsack capacity: "))
+
+start_time = time.perf_counter()
+
+dp = [[0 for _ in range(capacity + 1)] for _ in range(n + 1)]
+
+for i in range(1, n + 1):
+    for w in range(1, capacity + 1):
+        if weights[i - 1] <= w:
+            dp[i][w] = max(
+                profits[i - 1] + dp[i - 1][w - weights[i - 1]],
+                dp[i - 1][w]
+            )
+        else:
+            dp[i][w] = dp[i - 1][w]
+
+end_time = time.perf_counter()
+
+max_profit = dp[n][capacity]
+
+w = capacity
+selected_items = []
+
+for i in range(n, 0, -1):
+    if dp[i][w] != dp[i - 1][w]:
+        selected_items.append(i)
+        w -= weights[i - 1]
+
+selected_items.reverse()
+
+print("\nMaximum Profit:", max_profit)
+print("Selected Items:", selected_items)
+print("Execution Time: {:.8f} seconds".format(end_time - start_time))
