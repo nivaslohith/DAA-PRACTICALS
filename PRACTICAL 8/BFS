@@ -1,0 +1,28 @@
+# Graph Traversal using BFS and Queue
+
+from collections import deque
+
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F'],
+    'D': ['B'],
+    'E': ['B', 'F'],
+    'F': ['C', 'E']
+}
+
+queue = deque(['A'])
+visited = ['A']
+
+print("BFS Traversal:", end=" ")
+
+while queue:
+    vertex = queue.popleft()
+
+    print(vertex, end=" ")
+
+    # Add unvisited adjacent vertices to queue
+    for neighbour in graph[vertex]:
+        if neighbour not in visited:
+            visited.append(neighbour)
+            queue.append(neighbour)
