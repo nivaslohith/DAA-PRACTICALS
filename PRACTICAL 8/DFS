@@ -1,0 +1,27 @@
+# Graph Traversal using DFS (Stack)
+
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F'],
+    'D': ['B'],
+    'E': ['B', 'F'],
+    'F': ['C', 'E']
+}
+
+stack = ['A']
+visited = []
+
+print("DFS Traversal:", end=" ")
+
+while stack:
+    vertex = stack.pop()
+
+    if vertex not in visited:
+        print(vertex, end=" ")
+        visited.append(vertex)
+
+        # Add adjacent vertices to stack
+        for neighbour in reversed(graph[vertex]):
+            if neighbour not in visited:
+                stack.append(neighbour)
