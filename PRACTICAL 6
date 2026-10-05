@@ -1,0 +1,77 @@
+import time
+
+def matrix_chain_order(p):
+    n = len(p) - 1
+    dp = [[0] * n for _ in range(n)]
+    split = [[0] * n for _ in range(n)]
+
+    for length in range(2, n + 1):
+        for i in range(n - length + 1):
+            j = i + length - 1
+            dp[i][j] = float('inf')
+
+            for k in range(i, j):
+                cost = dp[i][k] + dp[k + 1][j] + p[i] * p[k + 1] * p[j + 1]
+
+                if cost < dp[i][j]:
+                    dp[i][j] = cost
+                    split[i][j] = k
+
+    return dp, split
+
+def print_parenthesis(split, i, j):
+    if i == j:
+        return "A" + str(i + 1)
+
+    k = split[i][j]
+    left = print_parenthesis(split, i, k)
+    right = print_parenthesis(split, k + 1, j)
+
+    return "(" + left + " x " + right + ")"
+
+print("Matrix Chain Multiplication using Dynamic Programming")
+
+n = int(input("Enter number of matrices: "))
+
+p = []
+
+print("\nEnter matrix dimensions:")
+
+for i in range(n):
+    if i == 0:
+        rows = int(input(f"Enter rows of Matrix A{i + 1}: "))
+    else:
+        rows = p[-1]
+
+    cols = int(input(f"Enter columns of Matrix A{i + 1}: "))
+
+    if i > 0 and rows != p[-1]:
+        print("Invalid dimensions!")
+        print("Columns of previous matrix must equal rows of current matrix.")
+        exit()
+
+    if i == 0:
+        p.append(rows)
+
+    p.append(cols)
+
+start_time = time.perf_counter()
+
+dp, split = matrix_chain_order(p)
+
+end_time = time.perf_counter()
+
+execution_time = end_time - start_time
+
+minimum_cost = dp[0][n - 1]
+optimal_order = print_parenthesis(split, 0, n - 1)
+
+print("\n----- RESULT -----")
+print("Matrix dimensions:", p)
+print("Minimum number of multiplications:", minimum_cost)
+print("Optimal parenthesization:", optimal_order)
+print("Execution time:", execution_time, "seconds")
+
+print("\n----- COMPLEXITY -----")
+print("Time Complexity: O(n^3)")
+print("Space Complexity: O(n^2)")
