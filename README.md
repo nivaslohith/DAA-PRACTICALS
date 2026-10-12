@@ -2,86 +2,63 @@
 
 Practical - 01
 
-Summary :
-Sorting is the procedure to sort information in either an increasing or decreasing order. Different algorithms have different time efficiency, memory efficiency, and difficulty in implementation.
-Bubble Sort: This algorithm compares and swaps elements that are close to each other until the entire array is sorted. It is easy but not very efficient when the array size is huge.
-Selection Sort: The smallest value is selected again and again until it is placed in its right position. The number of exchanges is low in this algorithm but it is slow in comparison to other algorithms.
-Insertion Sort: This algorithm creates a sorted array by inserting each element in its appropriate place.
-Merge Sort: This algorithm uses the technique of divide and conquer by dividing the array and sorting both parts before combining them.
-Quick Sort: Another algorithm that uses the technique of divide and conquer and has a faster execution time.
+Summary : Sorting is the process of arranging data in ascending or descending order. Bubble Sort compares adjacent elements, Selection Sort repeatedly selects the smallest element, and Insertion Sort places each element in its correct position. Merge Sort and Quick Sort use the divide-and-conquer approach to sort data efficiently.
 
-Conclusion :
-Every sorting technique has its pros and cons. Basic techniques are helpful for education and small data. Meanwhile, for big data sets, it is necessary to use Merge Sort and Quick Sort. The selection of a sorting technique is dependent on the amount of data.
+Conclusion : Each sorting algorithm has its own advantages and limitations. Simple methods are suitable for small datasets, whereas Merge Sort and Quick Sort are generally more efficient for larger datasets. The choice depends on the data size and requirements.
 
 Practical - 02
 
-Summary :
-Linear Search algorithm looks at each data item one after another till it locates the desired item. This method is easy and can be used to search data that is sorted as well as unsorted.
-Binary Search method divides a sorted list into two equal parts and looks for the desired item only in the part containing the item.
+Summary : Linear Search checks each element sequentially until the required value is found. Binary Search repeatedly divides a sorted list into halves to locate the target element more quickly.
 
-Conclusion :
-Linear Search is easier to program but not as efficient, whereas Binary Search is quicker and more efficient provided that the elements are sorted. Hence, Binary Search is better for huge amounts of sorted data, while Linear Search is better for small and unsorted data.
+Conclusion : Linear Search is simple and works with both sorted and unsorted data, while Binary Search is faster for sorted data. Therefore, Linear Search suits small datasets, whereas Binary Search is preferable for large, sorted datasets.
 
 Practical - 03
 
-Summary :
-Max-Heap Sort is a comparison-based sorting algorithm that first builds a Max Heap and then repeatedly removes the largest element to arrange the elements in ascending order. It efficiently sorts the given data without requiring extra memory.
+Summary : Heap Sort is a comparison-based sorting technique that creates a Max Heap and repeatedly extracts the largest element to arrange the data in ascending order. It sorts elements efficiently using very little additional memory.
 
-Conclusion :
-The Max-Heap Sort algorithm was successfully implemented and used to sort the given elements. The algorithm has a time complexity of O(n log n) and provides an efficient method for sorting data.
+Conclusion : Heap Sort was successfully implemented to arrange the given elements. It has a time complexity of \(O(n\log n)\) and is an effective choice for sorting data efficiently.
 
 Practical - 04
 
-Summary :
-The factorial of a number was implemented using both iterative and recursive methods. Both methods produce the same result, but the iterative method uses less memory.
+Summary : The factorial of a given number was calculated using iterative and recursive approaches. Both methods return the same result, but they differ in their execution and memory usage.
 
-Conclusion :
-The iterative method is more memory-efficient, while the recursive method provides a simpler mathematical implementation. Both methods have O(n) time complexity.
+Conclusion : The iterative approach generally requires less memory, whereas recursion offers a straightforward way to express the factorial calculation. Both methods have a time complexity of \(O(n)\).
 
 Practical - 05
 
-Summary :
-Dynamic Programming is used to solve the Knapsack Problem by dividing the problem into many sub-problems and saving their results in order to solve the main problem. This leads to finding the maximum possible value for selecting some items based on the given capacity.
+Summary : Dynamic Programming solves the Knapsack Problem by dividing it into smaller subproblems and storing their results for reuse. This helps determine the maximum value of items that can be selected within the given capacity.
 
-Conclusion :
-The Dynamic Programming technique is a very effective and optimal solution technique for solving the Knapsack Problem since it does not make redundant calculations and keeps the results of previous calculations.
+Conclusion : Dynamic Programming provides an optimal solution to the Knapsack Problem by avoiding repeated calculations and reusing previously computed results. It helps maximize the total value while satisfying the capacity constraint.
 
 Practical - 06
 
-Summary :
-The solution for Chain Matrix Multiplication comes under Dynamic Programming and involves breaking down the problem into sub-problems of matrix chains. This approach determines the least number of multiplications needed in order to multiply the matrices efficiently.
+Summary : Chain Matrix Multiplication uses Dynamic Programming to evaluate different ways of multiplying a sequence of matrices. It identifies the multiplication order that requires the minimum number of scalar multiplications.
 
-Conclusion :
-Dynamic Programming provides an efficient method for finding the optimal multiplication order of a matrix chain. It reduces unnecessary calculations and minimizes the total number of scalar multiplications, improving the overall efficiency of the algorithm.
+Conclusion : Dynamic Programming helps determine the most efficient order for matrix multiplication. By reducing unnecessary operations, it minimizes the computational effort and improves the efficiency of the solution.
 
 Practical - 07
 
-Summary :
-The Making Change Problem is solved using Dynamic Programming by breaking the problem into smaller amounts and storing the minimum number of coins needed for each amount. This avoids repeated calculations and helps find the optimal combination of coins.
+Summary : The Making Change Problem is solved using Dynamic Programming by calculating the minimum coins needed for smaller amounts and storing the results. These values are reused to determine the minimum number of coins required for the target amount.
 
-Conclusion :
-Dynamic Programming provides an efficient way to solve the Making Change Problem. It finds the minimum number of coins required for a given amount while reducing unnecessary computations through the use of previously calculated results.
+Conclusion : Dynamic Programming solves the Making Change Problem efficiently by reusing previously calculated results. It helps obtain the minimum number of coins for a given amount while avoiding redundant computations.
 
 Practical - 08
 
-Summary :
-Graph searching is used to visit and explore the vertices of a graph. BFS (Breadth-First Search) visits nodes level by level using a queue, while DFS (Depth-First Search) explores as deeply as possible using recursion or a stack. Both methods are useful for traversing and searching graphs.
+Summary : Graph traversal techniques are used to explore the vertices of a graph. BFS visits vertices level by level with the help of a queue, whereas DFS explores one path deeply before moving to another using recursion or a stack.
 
-Conclusion :
-BFS and DFS are fundamental graph-searching techniques. BFS is useful for finding the shortest path in an unweighted graph, while DFS is useful for exploring connected components and solving traversal-based problems. Both algorithms provide efficient ways to traverse a graph.
+Conclusion : BFS and DFS are important algorithms for graph traversal. BFS can find shortest paths in unweighted graphs, while DFS helps explore connected components and solve various graph-related problems. Both techniques are useful for systematically visiting graph vertices.
 
 Practical - 09
 
-Summary :
-Prim’s Algorithm is a greedy algorithm used to find the Minimum Spanning Tree (MST) of a connected, weighted graph. It starts with one vertex and repeatedly selects the minimum-weight edge that connects a visited vertex to an unvisited vertex.
+Summary : Prim’s Algorithm is a greedy method for constructing the Minimum Spanning Tree (MST) of a connected, weighted graph. It starts from a vertex and repeatedly chooses the lowest-weight edge connecting the existing tree to an unvisited vertex.
 
-Conclusion :
-Prim’s Algorithm efficiently constructs a Minimum Spanning Tree with minimum total edge weight. It is useful for network design and optimization problems where all vertices need to be connected with minimum cost.
+Conclusion : Prim’s Algorithm successfully builds a Minimum Spanning Tree with the minimum total edge weight. It is useful in network construction and other applications that require connecting all vertices at the lowest possible cost.
 
 Practical - 10
 
-Summary :
-Kruskal’s Algorithm finds the Minimum Spanning Tree (MST) by selecting the smallest-weight edges without forming cycles. The Python program uses the Union-Find method to connect all vertices with minimum total cost.
+Summary : Kruskal’s Algorithm constructs a Minimum Spanning Tree (MST) by arranging edges in increasing order of weight and choosing edges that do not create cycles. The Python implementation uses the Union-Find technique to connect all vertices efficiently.
 
-Conclusion :
-Kruskal’s Algorithm was successfully implemented in Python, and the minimum spanning tree was obtained with a total cost of 19. This algorithm is useful for connecting networks at minimum cost.
+Conclusion : Kruskal’s Algorithm was implemented successfully in Python to obtain a Minimum Spanning Tree with a total cost of 19. It demonstrates how greedy techniques can be used to establish connected networks with minimum overall cost.
+    
+
+
