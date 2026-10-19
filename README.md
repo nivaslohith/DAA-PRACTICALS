@@ -59,6 +59,9 @@ Practical - 10
 Summary : Kruskal’s Algorithm constructs a Minimum Spanning Tree (MST) by arranging edges in increasing order of weight and choosing edges that do not create cycles. The Python implementation uses the Union-Find technique to connect all vertices efficiently.
 
 Conclusion : Kruskal’s Algorithm was implemented successfully in Python to obtain a Minimum Spanning Tree with a total cost of 19. It demonstrates how greedy techniques can be used to establish connected networks with minimum overall cost.
-    
 
+Practical - 11
 
+Summary : This program implements the Floyd–Warshall Algorithm using Python to find the shortest distances between all pairs of vertices in a graph. It checks different paths and finds the shortest distance between vertices.
+
+Conclusion : Through this practical, I learned how the Floyd–Warshall Algorithm works and how to find the shortest distances between vertices in a graph. This practical helped me improve my understanding of graph algorithms and pathfinding.
